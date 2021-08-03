@@ -1,0 +1,64 @@
+
+spring:
+  profiles:
+    active: DEV
+
+---
+spring:
+  profiles: DEV
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+#Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+
+spring:
+  profiles: QA
+  datasource:
+    password: root
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/QA
+    username: postgres
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+---
+spring:
+  profiles: PROD
+  datasource:
+    password: root
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/PROD
+    username: postgres
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
