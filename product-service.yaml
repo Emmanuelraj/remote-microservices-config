@@ -1,6 +1,8 @@
 
 ---
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/order-service-dev
   jpa:
     database: POSTGRESQL
     generate-ddl: true
