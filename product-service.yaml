@@ -1,23 +1,4 @@
-
----
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/order-service-dev
-  jpa:
-    database: POSTGRESQL
-    generate-ddl: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
-
-#Actuator
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/product-service
